@@ -29,6 +29,7 @@ describe('server responses', () => {
     expect(res._responseCode).to.equal(200);
     expect(res._ended).to.equal(true);
     expect(res.end);
+    expect(commands).to.contain(res._data.toString());
     done();
   });
 

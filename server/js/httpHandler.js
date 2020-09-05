@@ -26,6 +26,7 @@ module.exports.router = (req, res, next = ()=>{}) => {
   console.log('module.exports.router req: ', req);
   res.writeHead(200, headers);
   res.write(getRandomCommand(validMessages));
+
   res.end();
   next(); // invoke next() at the end of a request to help with testing!
 };

@@ -12,8 +12,8 @@
       url: serverUrl,
       type: 'GET',
       contentType: 'text/plain',
-      success: (res, xhr) => {
-        console.log('AJAX success res: ', JSON.stringify(res));
+      complete: () => {setTimeout(commandFetch, 10)},
+      success: (res) => {
         SwimTeam.move(res);
       },
       error: (error) => {
@@ -21,6 +21,8 @@
       }
     })
   }
+
+  setTimeout(commandFetch, 0);
 
   /////////////////////////////////////////////////////////////////////
   // The ajax file uploader is provided for your convenience!
